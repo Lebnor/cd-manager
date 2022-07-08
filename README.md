@@ -1,6 +1,9 @@
 # cd-manager
-create and manage collections of CD's with this interactive python program
+Create and manage collections of CD's with this interactive python program
 
+# How to run this program
+`cd` to the project's root (where main.py is located)
+and run `python3 main.py`
 
 # Project Structure
 
@@ -32,3 +35,5 @@ Returns None if there is no such CD.
 
 ## main.py
 Entry point of the program. Run this file to execute the program.
+To run the file, `cd` to the project's root (where main.py is located)
+and run `python3 main.py`
