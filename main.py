@@ -25,7 +25,7 @@ def greet():
     """)
 
 def create_collection():
-    globs = glob.glob('./*.txt')
+    globs = glob.glob('collections/*.txt')
     global collection
 
     if len(globs) == 0:
@@ -43,7 +43,7 @@ def create_collection():
         print("Found existing collections: ")
         index = 1
         for filename in globs:
-            print(f"{index}. " + filename.split('.')[1].replace('\\', ''))
+            print(f"{index}. " + filename.replace("collections\\", "").replace(".txt", ""))
             index += 1
         print(f"{index}. Create new collection")
 
@@ -56,7 +56,8 @@ def create_collection():
             collection.save()
         else:
             if re.match(r"^[0-9]+$", choice) and int(choice) <= len(globs):
-                name = globs[int(choice) - 1].split('.')[1].replace('\\', '')
+                name = globs[int(choice) - 1].replace("collections\\", "").replace(".txt", "")
+                print(name)
                 collection = Collection(name)
                 collection.load()
                 print(collection)
@@ -210,7 +211,7 @@ def start_main_script():
     choice = 0
     greet()
     create_collection()
-    while choice != 6:
+    while choice != 7:
         show_menu()
         print()
         choice = input("Enter your choice: ")
@@ -229,6 +230,5 @@ def start_main_script():
         elif choice == "7":
             exit()
 
-if __name__ == "__main__":
-    start_main_script()
+start_main_script()
 

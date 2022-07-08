@@ -52,13 +52,13 @@ class Collection:
                 index += 1
 
     def save(self):
-        with open(f"{self.name}.txt", "w") as f:
+        with open(f"collections/{self.name}.txt", "w") as f:
             for item in self.items:
                 f.write(f"{item.artist}\t{item.title}\t{item.year}\n")
 
     def load(self):
-        if (os.path.exists(f"{self.name}.txt")):
-            with open(f"{self.name}.txt", "r") as f:
+        if (os.path.exists(f"collections/{self.name}.txt")):
+            with open(f"collections/{self.name}.txt", "r") as f:
                 for line in f:
                     artist, title, year = line.strip().split("\t")
                     self.items.append(CD(artist, title, year))

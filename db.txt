@@ -1,2 +1,0 @@
-a|b|1
-The Beatles|The White Album|1968
